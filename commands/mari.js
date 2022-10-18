@@ -62,10 +62,10 @@ module.exports = {
 				.setColor("#FAA8F0")
 				.setDescription("성장 추천");
 			for(idx = 0; idx < 6; idx++) {
-				embed.addField(`${(itemInfo[idx]).name}`, `${(itemInfo[idx]).amount}<:bluecrystal:952747773097295932>`, true); }
+				embed.addField(`${(itemInfo[idx]).name}`, `${(itemInfo[idx]).amount}<:bluecrystal:1031603943970705489>`, true); }
 			embed.addField("\u200B",  "전투ㆍ생활 추천", false);
 			for(idx = 18; idx < 24; idx++) {
-				embed.addField(`${(itemInfo[idx]).name}`, `${(itemInfo[idx]).amount}<:bluecrystal:952747773097295932>`, true); }
+				embed.addField(`${(itemInfo[idx]).name}`, `${(itemInfo[idx]).amount}<:bluecrystal:1031603943970705489>`, true); }
 			interaction.reply({ embeds: [embed], components: [buttonsRow], allowedMentions: {repliedUser: false}});
 
 			const filter = (interaction) => { return interaction.customId === "12time_ago" || "6time_ago" || "0time_ago" ;};
@@ -77,10 +77,10 @@ module.exports = {
 						.setColor("#FAA8F0")
 						.setDescription("성장 추천");
 					for(idx = 6; idx < 12; idx++) {
-						embed.addField(`${(itemInfo[idx]).name}`, `${(itemInfo[idx]).amount}<:bluecrystal:952747773097295932>`, true); }
+						embed.addField(`${(itemInfo[idx]).name}`, `${(itemInfo[idx]).amount}<:bluecrystal:1031603943970705489>`, true); }
 					embed.addField("\u200B",  "전투ㆍ생활 추천", false);
 					for(idx = 24; idx < 30; idx++) {
-						embed.addField(`${(itemInfo[idx]).name}`, `${(itemInfo[idx]).amount}<:bluecrystal:952747773097295932>`, true); }
+						embed.addField(`${(itemInfo[idx]).name}`, `${(itemInfo[idx]).amount}<:bluecrystal:1031603943970705489>`, true); }
 					interaction.update({ embeds: [embed], components: [buttonsRow], allowedMentions: {repliedUser: false}});
 				} else if(interaction.customId === "6time_ago"){
 					const embed = new MessageEmbed()
@@ -88,10 +88,10 @@ module.exports = {
 						.setColor("#FAA8F0")
 						.setDescription("성장 추천");
 					for(idx = 12; idx < 18; idx++) {
-						embed.addField(`${(itemInfo[idx]).name}`, `${(itemInfo[idx]).amount}<:bluecrystal:952747773097295932>`, true); }
+						embed.addField(`${(itemInfo[idx]).name}`, `${(itemInfo[idx]).amount}<:bluecrystal:1031603943970705489>`, true); }
 					embed.addField("\u200B",  "전투ㆍ생활 추천", false);
 					for(idx = 30; idx < 36; idx++) {
-						embed.addField(`${(itemInfo[idx]).name}`, `${(itemInfo[idx]).amount}<:bluecrystal:952747773097295932>`, true); }
+						embed.addField(`${(itemInfo[idx]).name}`, `${(itemInfo[idx]).amount}<:bluecrystal:1031603943970705489>`, true); }
 					interaction.update({ embeds: [embed], components: [buttonsRow], allowedMentions: {repliedUser: false}});
 				} else if(interaction.customId === "0time_ago"){
 					const embed = new MessageEmbed()
@@ -99,10 +99,10 @@ module.exports = {
 						.setColor("#FAA8F0")
 						.setDescription("성장 추천");
 					for(idx = 0; idx < 6; idx++) {
-						embed.addField(`${(itemInfo[idx]).name}`, `${(itemInfo[idx]).amount}<:bluecrystal:952747773097295932>`, true); }
+						embed.addField(`${(itemInfo[idx]).name}`, `${(itemInfo[idx]).amount}<:bluecrystal:1031603943970705489>`, true); }
 					embed.addField("\u200B",  "전투ㆍ생활 추천", false);
 					for(idx = 18; idx <24; idx++) {
-						embed.addField(`${(itemInfo[idx]).name}`, `${(itemInfo[idx]).amount}<:bluecrystal:952747773097295932>`, true); }
+						embed.addField(`${(itemInfo[idx]).name}`, `${(itemInfo[idx]).amount}<:bluecrystal:1031603943970705489>`, true); }
 					interaction.update({ embeds: [embed], components: [buttonsRow], allowedMentions: {repliedUser: false}});
 				}
 			});

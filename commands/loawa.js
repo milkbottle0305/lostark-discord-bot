@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const open = require('open');
+const { MessageEmbed } = require('discord.js');
 const axios = require("axios");
 const cheerio = require("cheerio");
 
@@ -27,8 +27,11 @@ module.exports = {
                 interaction.reply({content: "`"+interaction.options.getString("닉네임")+"`"+"이라는 캐릭터는 없습니다", allowedMentions: {repliedUser: false}});
                 return;
             }
-            open(`https://loawa.com/char/${interaction.options.getString("닉네임")}`);
-            interaction.reply({content: `${interaction.options.getString("닉네임")}의 로아와 정보로 이동합니다.`, allowedMentions: {repliedUser: false}});
+            const embed = new MessageEmbed()
+            .setColor('#6FF3E0')
+            .setTitle("로아와")
+            .setDescription(`[클릭하여 ${interaction.options.getString("닉네임")}의 로아와 정보로 이동합니다.](https://loawa.com/char/${interaction.options.getString("닉네임")})`);
+            interaction.reply({embeds: [embed], allowedMentions: {repliedUser: false}});
         });
         
 	},

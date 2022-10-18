@@ -37,11 +37,11 @@ module.exports = {
         const benefitBid = parseInt(equalBid / 11 * 10);
         const embed = new MessageEmbed()
         .setTitle(":moneybag: 경매 분배금 계산기")
-        .setDescription(`경매가: ${parseInt(interaction.options.getString("경매가"))}<:gold:952804483237289994> 인원: ${manyPeople}인`)
+        .setDescription(`경매가: ${parseInt(interaction.options.getString("경매가"))}<:gold:1031603945681989653> 인원: ${manyPeople}인`)
         .setColor("#FAA8F0")
         .addFields(
-            {name: "이 가격에 내가 입찰했는데 다른사람이 입찰하면 내가 이득이에요!", value: `입찰가: ${benefitBid}<:gold:952804483237289994> 이득: ${buyValue-benefitBid}<:gold:952804483237289994>`},
-            {name: "이 가격 이상부터 입찰하면 손해에요!", value:`입찰가: ${equalBid}<:gold:952804483237289994> 이득: ${buyValue-equalBid}<:gold:952804483237289994>`}
+            {name: "이 가격에 내가 입찰했는데 다른사람이 입찰하면 내가 이득이에요!", value: `입찰가: ${benefitBid}<:gold:1031603945681989653> 이득: ${buyValue-benefitBid}<:gold:1031603945681989653>`},
+            {name: "이 가격 이상부터 입찰하면 손해에요!", value:`입찰가: ${equalBid}<:gold:1031603945681989653> 이득: ${buyValue-equalBid}<:gold:1031603945681989653>`}
         )
         await interaction.reply({ embeds: [embed], allowedMentions: {repliedUser: false} });
 	},

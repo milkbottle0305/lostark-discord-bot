@@ -11,7 +11,29 @@ module.exports ={
         .addStringOption((option) =>
             option.setName('클래스')
                 .setDescription('각인 정보를 알고싶은 직업')
-                .setRequired(true)),
+                .setRequired(true)
+                .addChoice('디스트로이어', '디스트로이어')
+                .addChoice('버서커', '버서커')
+                .addChoice('워로드', '워로드')
+                .addChoice('홀리나이트', '홀리나이트')
+                .addChoice('기공사', '기공사')
+                .addChoice('배틀마스터', '배틀마스터')
+                .addChoice('스트라이커', '스트라이커')
+                .addChoice('인파이터', '인파이터')
+                .addChoice('창술사', '창술사')
+                .addChoice('건슬리어', '건슬리어')
+                .addChoice('데빌헌터', '데빌헌터')
+                .addChoice('블래스터', '블래스터')
+                .addChoice('스카우터', '스카우터')
+                .addChoice('호크아이', '호크아이')
+                .addChoice('바드', '바드')
+                .addChoice('서머너', '서머너')
+                .addChoice('소서리스', '소서리스')
+                .addChoice('아르카나', '아르카나')
+                .addChoice('데모닉', '데모닉')
+                .addChoice('리퍼', '리퍼')
+                .addChoice('블레이드', '블레이드')
+                .addChoice('도화가', '도화가')),
     async execute(interaction){
         const class_name = interaction.options.getString('클래스'); 
 
@@ -41,7 +63,6 @@ module.exports ={
             case '리퍼' : job_number = 6; class_number = 3; break;
             case '블레이드' : job_number = 6; class_number = 4; break;
             case '도화가' : job_number = 7; class_number = 2; break;
-            default: interaction.reply('올바른 직업명을 입력해주세요!'); return;
         }
         const tempembed = new MessageEmbed()
         .setColor('#F7819F')
@@ -53,7 +74,14 @@ module.exports ={
             const page = await browser.newPage();
             await page.goto('https://loawa.com/rank');
 
-            await page.click(`#contents > article > form > div > div:nth-child(${job_number}) > div > div:nth-child(2) > div > label:nth-child(${class_number}) > span`);
+            if(job_number ==7 && class_number ==2){
+                let button = await page.$(`#contents > article > form > div > div:nth-child(7) > div > div:nth-child(2) > div > label.checkbox-group.server-width > span`);
+                await button.evaluate(b => b.click());
+            } else{
+                let button = await page.$(`#contents > article > form > div > div:nth-child(${job_number}) > div > div:nth-child(2) > div > label:nth-child(${class_number}) > span`);
+                await button.evaluate(b => b.click());
+            }
+            
             await page.waitForSelector('#contents > article > table > tbody > tr:nth-child(20) > td:nth-child(11) > a > svg > path');
             await page.waitForTimeout(1000);
 

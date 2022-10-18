@@ -21,12 +21,12 @@ module.exports = {
             const sellValue = $("div.price.sell span").text();
             const embed = new MessageEmbed()
             .setTitle("크리스탈 시세")
-            .setDescription("100<:bluecrystal:952747773097295932>당 "+$("div.searched_time").text())
+            .setDescription("100<:bluecrystal:1031603943970705489>당 "+$("div.searched_time").text())
             .setColor("#CECEF6")
             .addFields(
-                {name: "크리스탈 구매가", value: `${buyValue}<:gold:952804483237289994>`, inline: true},
+                {name: "크리스탈 구매가", value: `${buyValue}<:gold:1031603945681989653>`, inline: true},
                 {name: "\u200b", value: "\u200b", inline: true},
-                {name: "크리스탈 판매가", value: `${sellValue}<:gold:952804483237289994>`, inline: true}
+                {name: "크리스탈 판매가", value: `${sellValue}<:gold:1031603945681989653>`, inline: true}
             );
             interaction.reply({embeds: [embed], allowedMentions: {repliedUser: false}});
         });

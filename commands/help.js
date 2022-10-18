@@ -24,7 +24,9 @@ module.exports = {
             .addField('/정보 <닉네임>', '전투정보실 조회', true)
             .addField('/로아와 <닉네임>', '로아와 조회', true)
             .addField('/나침반', '금일 스케줄 조회', true)
-            .addField('/용어 <단어>', '로스트아크 용어 설명', true);
+            .addField('/용어 <단어>', '로스트아크 용어 설명', true)
+            .addField('/각인 <클래스>', '클래스 별 각인 분석 정보 제공', true)
+            .addField('/공략 <레이드>', '군단장 레이드 공략 글 정보 제공', true);
             await interaction.reply({embeds: [helpEmbed], allowedMentions: {repliedUser: false}});
         } else if(helpCommand === "도움") {
             const helpEmbed = new MessageEmbed()
@@ -65,8 +67,20 @@ module.exports = {
         } else if(helpCommand === "용어"){
             const helpEmbed = new MessageEmbed()
             .setColor('#0099ff')
-            .setTitle(`/용어 사용방법`)
+            .setTitle(`/용어 <단어> 사용방법`)
             .setDescription(`<단어>에 해당하는 로스트아크 용어 설명을 제공합니다.`);
+            await interaction.reply({embeds: [helpEmbed], allowedMentions: {repliedUser: false}});
+        } else if(helpCommand === "각인"){
+            const helpEmbed = new MessageEmbed()
+            .setColor('#0099ff')
+            .setTitle(`/각인 <클래스> 사용방법`)
+            .setDescription(`<클래스>에 해당하는 로아와 상위 20명의 각인 정보를 분석하고 제공합니다.`);
+            await interaction.reply({embeds: [helpEmbed], allowedMentions: {repliedUser: false}});
+        } else if(helpCommand === "공략") {
+            const helpEmbed = new MessageEmbed()
+            .setColor('#0099ff')
+            .setTitle(`/공략 <레이드> 사용방법`)
+            .setDescription(`<레이드>에 해당하는 로스트아크 인벤 사이트의 공략 글 정보를 제공합니다.`);
             await interaction.reply({embeds: [helpEmbed], allowedMentions: {repliedUser: false}});
         } else {
             await interaction.reply("해당 명령어는 없습니다.");
