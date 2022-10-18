@@ -23,7 +23,7 @@ module.exports = {
             .addField('/경매', '경매 분배금 계산', true)
             .addField('/정보 <닉네임>', '전투정보실 조회', true)
             .addField('/로아와 <닉네임>', '로아와 조회', true)
-            .addField('/나침반', '금일 스케줄 조회', true)
+            .addField('/나침반', '사용불가', true)
             .addField('/용어 <단어>', '로스트아크 용어 설명', true);
             await interaction.reply({embeds: [helpEmbed], allowedMentions: {repliedUser: false}});
         } else if(helpCommand === "도움") {
@@ -60,7 +60,7 @@ module.exports = {
             const helpEmbed = new MessageEmbed()
             .setColor('#0099ff')
             .setTitle(`/나침반 사용방법`)
-            .setDescription(`금일 이용가능한 모험섬과 콘텐츠 정보를 제공합니다.`);
+            .setDescription(`현재 로아와 크롤링 서비스 종료로 인한 사용불가입니다. 새로운 서비스로 변경하겠습니다.`);
             await interaction.reply({embeds: [helpEmbed], allowedMentions: {repliedUser: false}});
         } else if(helpCommand === "용어"){
             const helpEmbed = new MessageEmbed()
