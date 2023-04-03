@@ -1,0 +1,8 @@
+.git
+.gitignore
+.dockerignore
+.png
+.jpg
+.md
+Dockerfile
+node_modules
